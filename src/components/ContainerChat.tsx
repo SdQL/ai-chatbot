@@ -43,9 +43,9 @@ const ContainerChat = () => {
       const data = await response.json();
 
       // 3. Mostrar respuesta del bot
-      const botMessage = { 
-        text: data.reply || data.error || "No se pudo obtener respuesta", 
-        sender: "assistant" as const 
+      const botMessage = {
+        text: data.reply || data.error || "No se pudo obtener respuesta",
+        sender: "assistant" as const,
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
@@ -67,12 +67,16 @@ const ContainerChat = () => {
         <div className="flex items-center space-x-3">
           <div className="relative">
             <div className="w-8 lg:w-10 h-8 lg:h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-xs lg:text-sm">AI</span>
+              <span className="text-white font-bold text-xs lg:text-sm">
+                AI
+              </span>
             </div>
             <div className="absolute -bottom-1 -right-1 w-3 lg:w-4 h-3 lg:h-4 bg-green-500 rounded-full border-2 border-gray-800 animate-pulse"></div>
           </div>
           <div>
-            <h2 className="text-white font-semibold text-base lg:text-lg">SimpleAI Chat</h2>
+            <h2 className="text-white font-semibold text-base lg:text-lg">
+              SimpleAI Chat
+            </h2>
             <p className="text-gray-400 text-xs lg:text-sm">
               {isLoading ? "Escribiendo..." : "En línea"}
             </p>
@@ -85,20 +89,24 @@ const ContainerChat = () => {
         {messages.length === 0 && (
           <div className="text-center py-8 lg:py-12 animate-fade-in">
             <div className="w-12 lg:w-16 h-12 lg:h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg lg:text-xl">AI</span>
+              <span className="text-white font-bold text-lg lg:text-xl">
+                AI
+              </span>
             </div>
-            <h3 className="text-gray-300 text-base lg:text-lg font-medium mb-2">¡Hola! Soy SimpleAI</h3>
+            <h3 className="text-gray-300 text-base lg:text-lg font-medium mb-2">
+              ¡Hola! Soy SimpleAI
+            </h3>
             <p className="text-gray-500 text-sm max-w-sm lg:max-w-md mx-auto px-4">
-              Puedo ayudarte con preguntas, análisis, programación y mucho más. 
+              Puedo ayudarte con preguntas, análisis, programación y mucho más.
               ¿En qué puedo asistirte hoy?
             </p>
           </div>
         )}
-        
+
         {messages.map((msg, i) => (
           <Message key={i} text={msg.text} sender={msg.sender} />
         ))}
-        
+
         {isLoading && (
           <div className="flex justify-start animate-fade-in">
             <div className="flex items-center space-x-3 bg-gray-800 border border-gray-700 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs">
@@ -118,10 +126,16 @@ const ContainerChat = () => {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
+              onKeyDown={(e) =>
+                e.key === "Enter" && !e.shiftKey && handleSend()
+              }
               disabled={isLoading}
               className="w-full bg-gray-900 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed resize-none text-sm lg:text-base"
-              placeholder={isLoading ? "SimpleAI está escribiendo..." : "Escribe tu mensaje aquí..."}
+              placeholder={
+                isLoading
+                  ? "SimpleAI está escribiendo..."
+                  : "Escribe tu mensaje aquí..."
+              }
               autoComplete="off"
             />
           </div>
