@@ -1,25 +1,9 @@
 import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
-  // Diagnosticar todas las variables de entorno
-  console.log("=== ENVIRONMENT VARIABLES DEBUG ===");
-  console.log("VERCEL_URL:", process.env.VERCEL_URL);
-  console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
-  
-  // Mostrar todas las variables que empiecen con API
-  
-  // Mostrar las primeras letras de todas las variables de entorno
-  console.log("Todas las variables de entorno disponibles:");
-  Object.keys(process.env).forEach(key => {
-    console.log(`${key}: ${process.env[key] ? '[SET]' : '[EMPTY]'}`);
-  });
-  
   const apiKey = process.env.API_KEY;
-  console.log("API_KEY exists:", !!apiKey);
-  console.log("API_KEY value (first 10 chars):", apiKey ? apiKey.substring(0, 10) + '...' : 'undefined');
-  console.log("API_KEY length:", apiKey?.length || 0);
-  console.log("=== END DEBUG ===");
-  
+  console.log("Vercel: ", process.env.VERCEL_URL)
+  console.log("Api: ", apiKey)
   try {
     const { message } = await request.json();
 
