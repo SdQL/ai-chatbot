@@ -95,10 +95,11 @@ const ResponsiveSideBar = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider">Conversaciones</h3>
             <span className="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded-full">4</span>
+            <span className="text-xs text-gray-500 px-2 py-1 ">En desarollo</span>
           </div>
           
           <ul className="space-y-2">
-            {Array.from({ length: 4 }).map((_, i) => (
+            {Array.from({ length: 1 }).map((_, i) => (
               <li key={i} className="group">
                 <div className="group flex items-center justify-between rounded-xl hover:bg-gray-700/50 transition-all duration-200 px-3 py-2 cursor-pointer border border-transparent hover:border-gray-600">
                   <a
@@ -111,7 +112,7 @@ const ResponsiveSideBar = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
-                    <span className="text-sm font-medium truncate">Conversación {i + 1}</span>
+                    <span className="text-sm font-medium truncate">JavaScript + React! </span>
                   </a>
                   
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex gap-1">

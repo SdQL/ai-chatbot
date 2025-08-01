@@ -18,12 +18,9 @@ export const POST: APIRoute = async ({ request }) => {
     
     if (!apiKey) {
       console.error('API_KEY not found in environment variables');
-      console.error('Available env vars starting with API:', 
-        Object.keys(process.env).filter(key => key.startsWith('API'))
-      );
       return new Response(JSON.stringify({ 
         error: 'API key not configured',
-        reply: 'Error de configuración del servidor. Por favor, contacta al administrador.'
+        reply: 'Error de configuración del servidor.'
       }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
