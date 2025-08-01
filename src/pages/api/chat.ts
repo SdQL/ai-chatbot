@@ -48,7 +48,7 @@ export const POST: APIRoute = async ({ request }) => {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'http://localhost:4321',
+        'HTTP-Referer': process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:4321',
         'X-Title': 'AI Chatbot',
       },
       body: JSON.stringify(requestBody),
