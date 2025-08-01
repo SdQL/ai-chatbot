@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# vercel output
+.vercel/
 
 # dependencies
 node_modules/
@@ -11,8 +13,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-
+.gitignore
 # environment variables
 .env
 .env.production
